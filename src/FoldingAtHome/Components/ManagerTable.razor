@@ -1,4 +1,4 @@
-﻿@using FoldingAtHomeEtimo.HttpRepositories.Models
+@using FoldingAtHomeEtimo.HttpRepositories.Models
 <h3>Managers</h3>
 @if (Managers.Count > 0)
 {
@@ -28,8 +28,8 @@
                         @manager.Institution
                     </td>
                 </tr>
-             }
-            </tbody>
+            }
+        </tbody>
     </table>
 }
 else
@@ -44,3 +44,14 @@ else
     [Parameter]
     public List<Manager> Managers { get; set; }
 }
+
+
+
+
+
+
+
+
+
+
+

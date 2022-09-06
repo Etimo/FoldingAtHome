@@ -1,4 +1,4 @@
-﻿@using FoldingAtHomeEtimo.HttpRepositories.Models
+@using FoldingAtHomeEtimo.HttpRepositories.Models
 <h3>Projects</h3>
 @if (Projects.Count > 0)
 {
@@ -27,10 +27,10 @@
                     <td class="align-middle">
                         @project.Modified
                     </td>
-                                      
+
                 </tr>
-             }
-            </tbody>
+            }
+        </tbody>
     </table>
 }
 else
@@ -45,3 +45,12 @@ else
     [Parameter]
     public List<Project> Projects { get; set; }
 }
+
+
+
+
+
+
+
+
+
