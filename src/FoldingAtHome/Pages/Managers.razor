@@ -1,0 +1,22 @@
+﻿@using FoldingAtHomeEtimo.HttpRepository
+@using FoldingAtHomeEtimo.Components;
+@page "/managers"
+
+<div class="row">
+    <div class="col">
+        <ManagerTable Managers="ManagerList" />
+    </div>
+</div>
+
+@code {
+    public List<Manager> ManagerList { get; set; } = new List<Manager>();
+    
+    [Inject]
+    public IProjectHttpRepository ProjectRepo { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        ManagerList = await ProjectRepo.GetProjectManagers();
+    }
+
+}

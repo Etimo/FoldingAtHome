@@ -1,0 +1,49 @@
+﻿@using HttpRepository;
+
+<h3>Managers</h3>
+@if (Managers.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Institution</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var manager in Managers)
+            {
+                <tr>
+                    <td class="align-middle">
+                        <img src="data:image/gif;base64,@manager.Thumb" style="max-width:150px;width:100%" />
+                    </td>
+                    <td class="align-middle">
+                        <NavLink class="nav-link" href="@GetUri(manager)">@manager.Id</NavLink>
+                    </td>
+                    <td class="align-middle">
+                        @manager.Name
+                    </td>
+                    <td class="align-middle">
+                        @manager.Institution
+                    </td>
+                </tr>
+             }
+            </tbody>
+    </table>
+}
+else
+{
+    <span>
+        Loading managers...
+    </span>
+}
+
+
+@code {
+    [Parameter]
+    public List<Manager> Managers { get; set; }
+
+    private string GetUri (Manager manager) => $"managers/{manager.Id}";
+}

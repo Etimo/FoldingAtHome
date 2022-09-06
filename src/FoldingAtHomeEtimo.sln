@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoldingAtHomeEtimo", "FoldingAtHome\FoldingAtHomeEtimo.csproj", "{7531FD78-DFC7-47EE-914A-09D14B077E88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7531FD78-DFC7-47EE-914A-09D14B077E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7531FD78-DFC7-47EE-914A-09D14B077E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7531FD78-DFC7-47EE-914A-09D14B077E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7531FD78-DFC7-47EE-914A-09D14B077E88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28BE73C6-BFA6-41B5-8AB1-2B7C15144DC5}
+	EndGlobalSection
+EndGlobal

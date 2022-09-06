@@ -1,0 +1,48 @@
+﻿@using HttpRepository;
+
+<h3>Projects</h3>
+@if (Projects.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Manager</th>
+                <th scope="col">Description</th>
+                <th scope="col">Modified</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var project in Projects)
+            {
+                <tr>
+                    <td class="align-middle">
+                        @project.Id
+                    </td>
+                    <td class="align-middle">
+                        @project.Manager
+                    </td>
+                    <td class="align-middle">
+                        @project.Description
+                    </td>
+                    <td class="align-middle">
+                        @project.Modified
+                    </td>
+                                      
+                </tr>
+             }
+            </tbody>
+    </table>
+}
+else
+{
+    <span>
+        Loading projects...
+    </span>
+}
+
+
+@code {
+    [Parameter]
+    public List<Project> Projects { get; set; }
+}
