@@ -1,5 +1,7 @@
 ﻿@using FoldingAtHomeEtimo.HttpRepository
 @using FoldingAtHomeEtimo.Components;
+@using FoldingAtHomeEtimo.HttpRepository.Models
+@inject IProjectHttpRepository ProjectRepo;
 @page "/managers/{managerId:int?}"
 
 <div class="row">
@@ -11,10 +13,8 @@
 @code {
     [Parameter]
     public int ManagerId { get; set; } = 0;
-    public Manager Manager { get; set; } = new Manager();
-    
-    [Inject]
-    public IProjectHttpRepository ProjectRepo { get; set; }
+    public Manager? Manager { get; set; }
+
 
     protected async override Task OnInitializedAsync()
     {

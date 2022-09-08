@@ -1,5 +1,5 @@
 ﻿@using HttpRepository;
-
+@using FoldingAtHomeEtimo.HttpRepository.Models
 <h3>Managers</h3>
 @if (Managers.Count > 0)
 {
@@ -20,7 +20,7 @@
                         <img src="data:image/gif;base64,@manager.Thumb" style="max-width:150px;width:100%" />
                     </td>
                     <td class="align-middle">
-                        <NavLink class="nav-link" href="@GetUri(manager)">@manager.Id</NavLink>
+                        <NavLink class="nav-link" href="@{$"managers/{manager.Id}"}">@manager.Id</NavLink>
                     </td>
                     <td class="align-middle">
                         @manager.Name
@@ -44,6 +44,4 @@ else
 @code {
     [Parameter]
     public List<Manager> Managers { get; set; }
-
-    private string GetUri (Manager manager) => $"managers/{manager.Id}";
 }
