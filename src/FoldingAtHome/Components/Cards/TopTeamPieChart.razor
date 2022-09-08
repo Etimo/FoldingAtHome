@@ -1,0 +1,46 @@
+﻿@using FoldingAtHomeEtimo.HttpRepositories.Models
+@using FoldingAtHomeEtimo.HttpRepositories
+@using System.Globalization
+@inject ITeamHttpRepository TeamHttpRepository;
+<div class="col-xl-6 col-lg-6 p-2">
+    <RadzenCard>
+        <div class="row">
+        <h3 class="col-6">Top @NumberOfTeams teams</h3>
+        <h3 class="col-6 text-end">@DateText</h3>
+        </div>
+        <RadzenChart>
+            <RadzenPieSeries Data="@_teams" Title="Top teams" CategoryProperty="Name" ValueProperty="Score" >
+            </RadzenPieSeries>
+            <RadzenValueAxis Formatter="@FormatScore">
+            </RadzenValueAxis>
+        </RadzenChart>
+    </RadzenCard>
+</div>
+
+@code
+{
+    [Parameter]
+    public int NumberOfTeams { get; set; } = 5;
+
+    DateTime _currentDate = DateTime.Now;
+    string DateText => $"{_currentDate:Y}";
+    NumberFormatInfo _nfi = new CultureInfo("en-US", false)
+    {
+        NumberFormat =
+        {
+            NumberDecimalDigits = 0
+        }
+    }.NumberFormat;
+
+    List<Team> _teams = new List<Team>();
+        
+    private string FormatScore(object value) => ((double)value).ToString("N", _nfi);
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+        var topTeams = await TeamHttpRepository.GetTeams(_currentDate.Month, _currentDate.Year);
+        _teams = topTeams.Take(NumberOfTeams).ToList();
+    }
+
+}

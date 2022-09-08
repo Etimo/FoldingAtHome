@@ -6,7 +6,7 @@ namespace FoldingAtHomeEtimo.HttpRepositories.Models
     (
         string Name,
         [property: JsonPropertyName("team")] int Id,
-        [property: JsonPropertyName("credit")] int Score,
+        [property: JsonPropertyName("credit")] float Score,
         [property: JsonPropertyName("wus")]int WorkUnits
     )
     {

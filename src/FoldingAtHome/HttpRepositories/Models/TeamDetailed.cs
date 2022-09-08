@@ -10,7 +10,7 @@ namespace FoldingAtHomeEtimo.HttpRepositories.Models
         Uri? Logo,
         Uri? Url,
         int Rank,
-        int Score,
+        float Score,
         [property: JsonPropertyName("wus")] int WorkUnits
     )
     {
