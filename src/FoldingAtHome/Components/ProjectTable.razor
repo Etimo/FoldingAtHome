@@ -1,52 +1,50 @@
 @using FoldingAtHomeEtimo.HttpRepositories.Models
-<h3>Projects</h3>
-unt > 0)
+Projects</h3>
+    unt > 0)
 
-="table">
-ad>
-    <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Manager</th>
+    ="table">
+    ad>
+<tr>
+    <th scope="col">Id</th>
+    <th scope="col">Manager</th>
 
-        <th scope="col">Description</th>
-        <th scope="col">Modified</th>
-           <
-      </thead>
-    <tbody>
-       @fore (var project in Projects)
-      {
-         <tr
-            <td class="align-middle">
+    <th scope="col">Description</th>
+    <th scope="col">Modified</th>
+    < </thead>
+        <tbody>
+            @fore (var project in Projects)
+            {
+            <tr <td class="align-middle">
                 @project.Id
-            </td>
-            <td class="align-middle">
-                @project.Manager
-            </td>
-iddle">
-             
-   @project.Description
-           </td>
-        <td class="align-middle">
+                </td>
+                <td class="align-middle">
+                    @project.Manager
+                </td>
+                iddle">
+
+                @project.Description
+                </td>
+                <td class="align-middle">
                     @project.Modified
-                    </td>
+                             </td>
 
-                </tr>
-}
-</tbody>
-    </table>
+               <tr>
+                }
+        </tbody>
+     </table>
 
-else
-{
-    <span>
-       
- Loading projects...
-    </span>
-
-}
+se
 
 
-@code {
-    [Parameter]
+
+        Loading projects...
+            </span>
+
+ } 
+      
+        
+ @cod   e {
+            [Parameter]
     public List<Project> Projects { get; set; }
 }
 
@@ -58,3 +56,4 @@ else
 
 
 
+                        

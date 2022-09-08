@@ -1,29 +1,28 @@
 @using FoldingAtHomeEtimo.Components;
 @using FoldingAtHomeEtimo.HttpRepositories
 @using FoldingAtHomeEtimo.HttpRepositories.Models
-@page "/projects"
+e "/projects"
 
 
 <div class="row">
 
-    <div cla
-ss="col">
+<div cla ss="col">
 
-        <ProjectTable Projects="ProjectList" />
-    </div>
-
-
-</div>
+            <ProjectTable Projects="ProjectList" />
+        </div>
 
 
-@code
- {
-    public List<Project> ProjectList { get; set; } = n
-ew List<Project>();
-    [Inject]
+   <    /div>
 
+
+        @code
+        {
+            public List<Project> ProjectList { get; set; } = n
+            ew List<Project>();
+                [Inject]
+    
     public IProjectHttpRepository ProjectRepo { get; set; }
-
+        
     protected async override Task OnInitializedAsync()
     {
         ProjectList = await ProjectRepo.GetProjects();
