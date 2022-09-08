@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
-using FoldingAtHomeEtimo.HttpRepository.Models;
+using FoldingAtHomeEtimo.HttpRepositories.Models;
 
-namespace FoldingAtHomeEtimo.HttpRepository
+namespace FoldingAtHomeEtimo.HttpRepositories
 {
     public class ProjectHttpRepository : IProjectHttpRepository
     {
@@ -25,7 +25,7 @@ namespace FoldingAtHomeEtimo.HttpRepository
             return products;
         }
 
-        async Task<Manager> IProjectHttpRepository.GetManager(int managerId)
+        public async Task<Manager> GetManager(int managerId)
         {
             var response = await _client.GetAsync($"project/manager/{managerId}");
             var content = await response.Content.ReadAsStringAsync();
@@ -37,7 +37,7 @@ namespace FoldingAtHomeEtimo.HttpRepository
             return manager;
         }
 
-        async Task<List<Manager>> IProjectHttpRepository.GetProjectManagers()
+       public async Task<List<Manager>> GetProjectManagers()
         {
             var response = await _client.GetAsync("project/manager");
             var content = await response.Content.ReadAsStringAsync();

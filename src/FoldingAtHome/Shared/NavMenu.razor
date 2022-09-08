@@ -1,39 +1,30 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">FoldingAtHomeEtimo</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
-
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="projects">
-                <span class="oi oi-plus" aria-hidden="true"></span> Projects
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="managers">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Managers
-            </NavLink>
-        </div>
-    </nav>
-</div>
+﻿<RadzenSidebar Visible="@Visible">
+    <ChildContent>
+        <RadzenPanelMenu style="height: 100%">
+            <ChildContent>
+                <RadzenPanelMenuItem Icon="home" Path="index" Text="Dashboard">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Icon="perm_contact_calendar" Path="projects" Text="Projects">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Icon="work" Path="managers" Text="Managers">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Icon="shopping_cart" Path="opportunities" Text="Opportunities">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Icon="settings" Text="Settings">
+                    <ChildContent>
+                        <RadzenPanelMenuItem Path="opportunity-statuses" Text="Opportunity Statuses">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Path="task-types" Text="Task Types">
+                        </RadzenPanelMenuItem>
+                        <RadzenPanelMenuItem Path="task-statuses" Text="Task Statuses">
+                        </RadzenPanelMenuItem>
+                    </ChildContent>
+                </RadzenPanelMenuItem>
+            </ChildContent>
+        </RadzenPanelMenu>
+    </ChildContent>
+</RadzenSidebar>
 
 @code {
-    private bool collapseNavMenu = true;
-
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+    [Parameter] public bool Visible { get; set; }
 }
