@@ -18,13 +18,15 @@
         </RadzenBody>
         <NavMenu Visible="_navBarOpen" />
         <RadzenFooter>
-
+            
         </RadzenFooter>
     </RadzenLayout>
 </body>
 @code {
 
+
     private bool _navBarOpen = false;
+
     private void ToggleNavBar() => _navBarOpen = !_navBarOpen;
     
 }

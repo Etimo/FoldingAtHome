@@ -24,4 +24,11 @@ builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<TooltipService>();
 builder.Services.AddScoped<ContextMenuService>();
 
+builder.Services.AddScoped<IProjectHttpRepository, ProjectHttpRepository>();
+builder.Services.AddScoped<ITeamHttpRepository, TeamHttpRepository>();
+
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(uriString: "https://api.foldingathome.org/") });
+
+
+
 await builder.Build().RunAsync();
