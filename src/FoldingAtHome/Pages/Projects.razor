@@ -3,14 +3,23 @@
 @using FoldingAtHomeEtimo.HttpRepositories.Models
 @page "/projects"
 
+
 <div class="row">
-    <div class="col">
+
+    <div cla
+ss="col">
+
         <ProjectTable Projects="ProjectList" />
     </div>
+
+
 </div>
 
-@code {
-    public List<Project> ProjectList { get; set; } = new List<Project>();
+
+@code
+ {
+    public List<Project> ProjectList { get; set; } = n
+ew List<Project>();
     [Inject]
 
     public IProjectHttpRepository ProjectRepo { get; set; }

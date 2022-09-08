@@ -4,28 +4,18 @@
 @inject IProjectHttpRepository ProjectRepo;
 @page "/managers"
 
-<div class="row">
+<div cl
+ass="row">
     <div class="col">
+
+
         <ManagerTable Managers="ManagerList" />
+
     </div>
 </div>
 
+
+
 @code {
-    public List<Manager> ManagerList { get; set; } = new List<Manager>();
 
-
-    protected async override Task OnInitializedAsync()
-    {
-        ManagerList = await ProjectRepo.GetProjectManagers();
-    }
-
-}
-
-
-
-
-
-
-
-
-
+    p

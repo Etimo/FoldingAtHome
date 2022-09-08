@@ -5,17 +5,23 @@
 @page "/managers/{managerId:int?}"
 
 <div class="row">
-    <div class="col">
-        <ManagerModel Manager="Manager" />
-    </div>
-</div>
+    <di
+v class="col">
+            <Manage
+rModel Manager="Manager" />
+        </div>
+v>
+
+
+
 
 @code {
     [Parameter]
+
     public int ManagerId { get; set; } = 0;
-    public Manager? Manager { get; set; }
+public Manager? Manager { get; set; }
 
-
+    
     protected async override Task OnInitializedAsync()
     {
         Manager = await ProjectRepo.GetManager(ManagerId);

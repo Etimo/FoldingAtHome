@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using FoldingAtHomeEtimo.HttpRepository.Models;
 
 namespace FoldingAtHomeEtimo.HttpRepository
 {

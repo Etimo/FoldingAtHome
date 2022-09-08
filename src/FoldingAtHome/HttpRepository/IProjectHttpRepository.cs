@@ -1,4 +1,6 @@
-﻿namespace FoldingAtHomeEtimo.HttpRepository
+﻿using FoldingAtHomeEtimo.HttpRepository.Models;
+
+namespace FoldingAtHomeEtimo.HttpRepository
 {
 
     public interface IProjectHttpRepository
