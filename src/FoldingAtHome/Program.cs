@@ -18,6 +18,4 @@ builder.Services.AddScoped<ITeamHttpRepository, TeamHttpRepository>();
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(uriString: "https://cors-anywhere.herokuapp.com/https://api.foldingathome.org/") });
 
-
-
 await builder.Build().RunAsync();

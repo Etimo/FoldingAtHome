@@ -1,0 +1,13 @@
+﻿<RadzenCard class="m-3">
+    <h3 class="h5">@Title</h3>
+    <div class="d-flex flex-row">
+        <b>@Message</b>
+    </div>
+</RadzenCard>
+
+@code {
+    [Parameter]
+    public string Title { get; init; }
+    [Parameter]
+    public string Message { get; init; }
+}

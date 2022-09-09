@@ -1,4 +1,4 @@
-﻿@using FoldingAtHomeEtimo.Components;
+@using FoldingAtHomeEtimo.Components;
 @using FoldingAtHomeEtimo.HttpRepositories
 @using FoldingAtHomeEtimo.HttpRepositories.Models
 @inject IProjectHttpRepository ProjectRepo;
@@ -6,19 +6,17 @@
 
 <div class="row">
     <div class="col">
-        <ManagerModel Manager="Manager" />
+        <Manager Model Manager="Manager" />
     </div>
 </div>
-
+    
 @code {
     [Parameter]
     public int ManagerId { get; set; } = 0;
     public Manager? Manager { get; set; }
 
-
     protected async override Task OnInitializedAsync()
     {
         Manager = await ProjectRepo.GetManager(ManagerId);
     }
-
 }

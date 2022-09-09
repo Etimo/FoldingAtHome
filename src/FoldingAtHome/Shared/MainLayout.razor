@@ -1,29 +1,32 @@
 ﻿@inherits LayoutComponentBase
-<body>
-        <RadzenDialog/>
-        <RadzenNotification/>
-        <RadzenContextMenu/>
-        <RadzenTooltip/>
-        <RadzenLayout>
-            <RadzenHeader>
-                <RadzenSidebarToggle Click="@ToggleNavBar"/>
-            </RadzenHeader>
-            <RadzenBody>
-                <ChildContent>
-                    <RadzenContentContainer Name="main">
-                        @Body
-                    </RadzenContentContainer>
-                </ChildContent>
-            </RadzenBody>
-            <NavMenu Visible="_navBarOpen"/>
-            <RadzenFooter>
 
-            </RadzenFooter>
-        </RadzenLayout>
+<body>
+    <RadzenDialog />
+    <RadzenNotification />
+    <RadzenContextMenu />
+    <RadzenTooltip />
+    <RadzenLayout>
+        <RadzenHeader>
+            <RadzenSidebarToggle Click="@ToggleNavBar" />
+        </RadzenHeader>
+        <RadzenBody>
+            <ChildContent>
+                <RadzenContentContainer Name="main">
+                    @Body
+                </RadzenContentContainer>
+            </ChildContent>
+        </RadzenBody>
+        <NavMenu Visible="_navBarOpen" />
+        <RadzenFooter>
+            
+        </RadzenFooter>
+    </RadzenLayout>
 </body>
-@code{
+@code {
+
 
     private bool _navBarOpen = false;
-    private void ToggleNavBar() => _navBarOpen = !_navBarOpen;
 
+    private void ToggleNavBar() => _navBarOpen = !_navBarOpen;
+    
 }

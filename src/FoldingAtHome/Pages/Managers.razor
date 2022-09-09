@@ -1,22 +1,30 @@
-﻿@using FoldingAtHomeEtimo.Components;
+@using FoldingAtHomeEtimo.Components;
 @using FoldingAtHomeEtimo.HttpRepositories
 @using FoldingAtHomeEtimo.HttpRepositories.Models
 @inject IProjectHttpRepository ProjectRepo;
+@inject NotificationService NotificationService
 @page "/managers"
-
-<div class="row">
-    <div class="col">
-        <ManagerTable Managers="ManagerList" />
-    </div>
-</div>
-
+    <div class="row">
+       <div class="col">
+           <ManagerTable Managers="ManagerList" />
+        </div>
+   </div> 
+    
 @code {
-    public List<Manager> ManagerList { get; set; } = new List<Manager>();
-
-
+    List<Manager> ManagerList { get; set; } = new List<Manager>();
+                   
     protected async override Task OnInitializedAsync()
-    {
-        ManagerList = await ProjectRepo.GetProjectManagers();
+    {     
+            try {
+                ManagerList = await ProjectRepo.GetProjectManagers();
+            } catch {
+                ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "API Down", Detail = "Could not load data from API", Duration = 30000 });
+            }
     }
 
+    void ShowNotification(NotificationMessage message)
+    {
+        NotificationService.Notify(message);
+    }
 }
+                    

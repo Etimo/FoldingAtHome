@@ -1,46 +1,32 @@
-﻿@using FoldingAtHomeEtimo.HttpRepositories.Models
-<h3>Managers</h3>
-@if (Managers.Count > 0)
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Institution</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var manager in Managers)
-            {
-                <tr>
-                    <td class="align-middle">
-                        <img src="data:image/gif;base64,@manager.Thumb" style="max-width:150px;width:100%" />
-                    </td>
-                    <td class="align-middle">
-                        <NavLink class="nav-link" href="@{$"managers/{manager.Id}"}">@manager.Id</NavLink>
-                    </td>
-                    <td class="align-middle">
-                        @manager.Name
-                    </td>
-                    <td class="align-middle">
-                        @manager.Institution
-                    </td>
-                </tr>
-             }
-            </tbody>
-    </table>
-}
-else
-{
-    <span>
-        Loading managers...
-    </span>
-}
+@using FoldingAtHomeEtimo.HttpRepositories.Models
 
+<h3>Managers</h3>
+<RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="10" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+    Data="@Managers" TItem="Manager" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
+
+    <Columns>
+    <RadzenDataGridColumn TItem="Manager" Title="Photo" Frozen="true" Sortable="false" Filterable="false" Width="60px" >
+            <Template Context="data">
+                <RadzenImage Path="@data.GetBase64()" style="width: 40px; height: 40px; border-radius: 8px;" />
+            </Template>
+        </RadzenDataGridColumn>
+    <RadzenDataGridColumn TItem="Manager" Property="Name" Title="Name" Frozen="true" Width="140px" />
+    <RadzenDataGridColumn TItem="Manager" Property="Institution" Title="Institution" Frozen="true" Width="140px" />
+    </Columns>
+</RadzenDataGrid>
 
 @code {
     [Parameter]
-    public List<Manager> Managers { get; set; }
+    public IEnumerable<Manager> Managers { get; set; }
 }
+
+
+
+
+
+
+
+
+
+
+
