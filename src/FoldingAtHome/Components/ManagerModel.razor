@@ -1,15 +1,22 @@
 @using FoldingAtHomeEtimo.HttpRepositories.Models
 <h3>ManagerModel</h3>
 
-<img src="data:image/gif;base64,@Manager.Thumb" style="max-width:150px;width:100%" />
-@Manage
-r.Id
-@Manar.Name
-
+@if (Manager.Thumb != "")
+{
+    <img src="data:image/gif;base64,@Manager.Thumb" style="max-width:150px;width:100%" />
+}
+else
+{
+    <img src="images/headshot.jpg" style="max-width:150px;width:100%" />
+}
+@Manager.Id
+@Manager.Name
 @Manager.Institution
 
 @code {
- 
+    [Parameter]
+    public Manager Manager {get; set;}
+}
 
 
   

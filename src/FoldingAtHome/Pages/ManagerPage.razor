@@ -2,29 +2,23 @@
 @using FoldingAtHomeEtimo.HttpRepositories
 @using FoldingAtHomeEtimo.HttpRepositories.Models
 @inject IProjectHttpRepository ProjectRepo;
-managers/{managerId:int?}"
+@page "/managers/{managerId:int?}"
 
 <div class="row">
-<di v class="col">
-    <Manage rModel Manager="Manager" />
+    <div class="col">
+        <Manager Model Manager="Manager" />
     </div>
-    v>
-
-
-
+</div>
     
-    @code {
-        [Parameter]
-
-      public int ManagerId { get; set; } = 0;
+@code {
+    [Parameter]
+    public int ManagerId { get; set; } = 0;
     public Manager? Manager { get; set; }
-    
 
-
-        {
+    protected async override Task OnInitializedAsync()
+    {
         Manager = await ProjectRepo.GetManager(ManagerId);
     }
-
 }
 
 
