@@ -16,7 +16,7 @@ builder.Services.AddScoped<ContextMenuService>();
 builder.Services.AddScoped<IProjectHttpRepository, ProjectHttpRepository>();
 builder.Services.AddScoped<ITeamHttpRepository, TeamHttpRepository>();
 
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(uriString: "https://api.allorigins.win/get?url=https://api.foldingathome.org/") });
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(uriString: "https://crossorigin.me/https://api.foldingathome.org/") });
 
 
 
