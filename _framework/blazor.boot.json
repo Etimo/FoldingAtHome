@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "FoldingAtHomeEtimo.dll": "sha256-q8bowcqfeC+j7meSEzmNdiMo5MIc1ZFxU61sE+wh0NM=",
+      "FoldingAtHomeEtimo.dll": "sha256-nyXiTTqnyNWa9WSwMOoMipu9QQ3J2Yc88y9mSNE0tC0=",
       "Microsoft.AspNetCore.Components.dll": "sha256-8Gr27YZR+dK8C8255Xc9bFnIORhUtvH4ASOGLlsWyFE=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-49aYzkTrtGxWm+UPXFk8SgH7FrWFArYTlSQedrm\/ZUw=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-yL06Qr6E06y0wbeDibslVXla5UPNvMxLWp3tvDcCLUs=",
